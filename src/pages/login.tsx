@@ -26,6 +26,12 @@ export default function Login() {
   const theme = useMantineTheme();
 
   const handleSubmit = () => {
+    // Form validation
+    if (!username || !password) {
+      setError("Please enter both username and password.");
+      return;
+    }
+
     if (doLogin(username, password)) {
       loginStore();
       navigate("/resources");
@@ -58,7 +64,7 @@ export default function Login() {
           >
             <Stack spacing="lg">
               <Title align="center" order={2}>
-              🚀 Login to Explore Space
+                🚀 Login to Explore Space
               </Title>
 
               <TextInput
@@ -67,7 +73,7 @@ export default function Login() {
                 value={username}
                 onChange={(e) => {
                   setUsername(e.currentTarget.value);
-                  setError("");
+                  setError(""); // Reset error when typing
                 }}
                 required
                 size="md"
@@ -79,7 +85,7 @@ export default function Login() {
                 value={password}
                 onChange={(e) => {
                   setPassword(e.currentTarget.value);
-                  setError("");
+                  setError(""); // Reset error when typing
                 }}
                 required
                 size="md"

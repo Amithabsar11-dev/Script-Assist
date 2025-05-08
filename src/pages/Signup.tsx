@@ -26,6 +26,12 @@ export default function Signup() {
   const loginStore = useAppStore((s) => s.login);
 
   const handleSubmit = () => {
+    // Form validation
+    if (!username || !password) {
+      setError("Please fill out both username and password.");
+      return;
+    }
+
     if (signup(username, password)) {
       loginStore();
       navigate("/resources");
@@ -75,7 +81,7 @@ export default function Signup() {
                 value={username}
                 onChange={(e) => {
                   setUsername(e.currentTarget.value);
-                  setError("");
+                  setError(""); // Reset error when typing
                 }}
                 required
                 size="md"
@@ -87,7 +93,7 @@ export default function Signup() {
                 value={password}
                 onChange={(e) => {
                   setPassword(e.currentTarget.value);
-                  setError("");
+                  setError(""); // Reset error when typing
                 }}
                 required
                 size="md"
