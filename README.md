@@ -1,4 +1,5 @@
-Script Assist
+Script Assist :
+
   A React + TypeScript web application that demonstrates user authentication, resource listing, and navigation. The app includes both login and signup functionalities with state persistence.
 
 1. Project Overview
