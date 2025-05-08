@@ -58,7 +58,7 @@ export default function Login() {
           >
             <Stack spacing="lg">
               <Title align="center" order={2}>
-                Login to Explore Space
+              🚀 Login to Explore Space
               </Title>
 
               <TextInput
